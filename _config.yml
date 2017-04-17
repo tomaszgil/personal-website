@@ -1,0 +1,10 @@
+name: Tomasz Gil
+
+# Location
+source: ./source
+destination: ./site
+layouts_dir: ./source/layouts
+
+# Reading
+encoding: "utf-8"
+exclude: ["node_modules", "gulpfile.js", "package.json"]
