@@ -46,8 +46,9 @@ gulp.task('sass', function () {
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('site/css'))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest('site/stylesheets'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('source/stylesheets'));
 });
 
 /**
@@ -56,7 +57,7 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('source/stylesheets/*.scss', ['sass']);
-    gulp.watch('source/layouts/*.html', ['jekyll-rebuild']);
+    gulp.watch(['source/layouts/*.html', 'source/includes/*.html'], ['jekyll-rebuild']);
 });
 
 /**

@@ -4,6 +4,7 @@ name: Tomasz Gil
 source: ./source
 destination: ./site
 layouts_dir: ./source/layouts
+includes_dir: ./includes
 
 # Reading
 encoding: "utf-8"

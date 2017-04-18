@@ -16,16 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync.git"
+    "url": "https://github.com/tomaszgil/personal-website"
   },
   "keywords": [
     "jekyll",
     "gulp",
     "sass",
     "browsersync"
-  ],
-  "bugs": {
-    "url": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync/issues"
-  },
-  "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync"
+  ]
 }
