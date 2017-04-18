@@ -10,20 +10,7 @@
 
   &--logo {
     width: 40px;
-  }
-
-  &--menu {
-    display: flex;
-    align-items: center;
-
-    &--option {
-      margin-left: 60px;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 0.8em;
-      font-weight: 700;
-      color: $page-title;
-    }
+    height: 40px;
   }
 
   &--page-title {
@@ -32,5 +19,90 @@
     color: $page-title;
     margin: 0.3em 0;
     margin-top: 40vh;
+  }
+
+  &--menu {
+    display: flex;
+    align-items: center;
+
+    &--option {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.8em;
+      font-weight: 700;
+      color: $page-title;
+      margin-left: 60px;
+      padding: 8px 0;
+      border-bottom: 3px solid transparent;
+      transition: 0.2s all ease-in-out;
+
+      &:hover {
+        border-bottom-color: $accent;
+      }
+    }
+  }
+
+  // Mobile navigation
+  &--mobile-menu-button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    background: none;
+    outline: 0;
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:focus, &:active {
+      outline: 0;
+    }
+
+    div, div:before, div:after {
+      content: "";
+      width: 30px;
+      height: 3px;
+      display: block;
+      background: $accent;
+      position: relative;
+    }
+
+    div:before {
+      top: 10px;
+    }
+
+    div:after {
+      top: -13px;
+    }
+
+    &__close {
+      div {
+        background: transparent;
+
+        &:before {
+          transform: rotate(45deg);
+          top: 3px;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    &--menu {
+      display: none;
+
+      .mobile-menu-active {
+
+      }
+    }
+
+    &--mobile-menu-button {
+      display: flex;
+    }
   }
 }
