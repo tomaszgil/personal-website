@@ -1,6 +1,30 @@
-@import 'tools/_normalize';
-@import 'tools/_colors';
+@import "tools/_normalize";
+@import "tools/_colors";
+@import "tools/_fonts";
+@import "_header";
 
 body {
-    background: white;
+  margin: 0;
+  font-size: 11pt;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.inner-container {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.subheader {
+  text-transform: uppercase;
+  color: $accent;
+  margin: 0.5em 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
 }
