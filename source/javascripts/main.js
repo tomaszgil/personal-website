@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function handleMobileNavigation() {
   $("#menu-button").on('click', function() {
-    $("#menu").toggleClass("mobile-menu-active");
+    $("#menu").toggleClass("header--menu__mobile");
     $(this).toggleClass("header--mobile-menu-button__close");
   });
 }
