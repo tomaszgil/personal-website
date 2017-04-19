@@ -2,6 +2,7 @@
 @import "tools/_colors";
 @import "tools/_fonts";
 @import "_header";
+@import "_about";
 
 body {
   margin: 0;
@@ -24,8 +25,21 @@ body {
   text-transform: uppercase;
   color: $accent;
   margin: 0.5em 0;
+  font-size: 1em;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
+  font-size: 1.6em;
+  color: $section-title;
+  margin: 0.5em 0;
+
+  &:after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    display: block;
+    margin-top: 30px;
+    background: $accent;
+  }
 }
