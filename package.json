@@ -4,7 +4,7 @@
   "description": "Personal website using Shane Osbourne's project template",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": ""
   },
   "author": "Tomasz Gil",
   "license": "ISC",

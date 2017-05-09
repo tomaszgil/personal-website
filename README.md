@@ -8,9 +8,9 @@ Available soon on [tomaszgil.pl](http://tomaszgil.pl/)
 
 1. Install jekyll
 ```
-gem install jekyll
+gem install --no-ri --no-rdoc jekyll
 ```
-2. Install missing dependencies
+2. Install required dependencies
 ```
 npm install
 ```
