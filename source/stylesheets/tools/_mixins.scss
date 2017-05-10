@@ -1,0 +1,22 @@
+@mixin clear-fix {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin button-reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin bottom-border {
+  border-bottom: 3px solid transparent;
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    border-bottom-color: $accent;
+  }
+}

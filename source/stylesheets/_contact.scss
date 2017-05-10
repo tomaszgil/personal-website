@@ -7,7 +7,7 @@
     line-height: 1.8em;
     width: 50%;
     display: inline-block;
-    margin: 50px 0;
+    margin-top: 50px;
   }
 
   &--info {
@@ -23,22 +23,88 @@
     &--email {
       text-decoration: none;
       font-weight: 700;
-      padding-bottom: 8px;
+      text-align: right;
+      padding-bottom: 6px;
+      cursor: pointer;
       color: $accent;
-      border-bottom: 3px solid transparent;
+      @include bottom-border;
+    }
+
+    @include clear-fix;
+  }
+
+  &--form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &--input {
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      background: none;
+      padding: 8px;
+      border-bottom: 3px solid $form-input;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9em;
+      color: $regular-text;
       transition: 0.2s all ease-in-out;
 
-      &:hover {
-        border-bottom-color: $accent;
+      &::placeholder {
+        color: $form-text;
+      }
+
+      &:nth-child(1) {
+        margin-right: 4.7%;
+        width: 34.2%;
+      }
+
+      &:nth-child(2) {
+        width: 60.33%;
+      }
+
+      &:focus {
+        border-color: $accent;
       }
     }
 
-    &:after {
-      content: " ";
-      display: block;
-      clear: both;
+    &--message {
+      resize: none;
+      box-sizing: border-box;
+      outline: none;
+      width: 100%;
+      padding: 8px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 3px solid $form-input;
+      background: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9em;
+      color: $regular-text;
+      transition: 0.2s all ease-in-out;
+
+      &::placeholder {
+        color: $form-text;
+      }
+
+      &:focus {
+        border-color: $accent;
+      }
     }
 
+    &--button {
+      @include button-reset;
+      display: block;
+      text-transform: uppercase;
+      color: $accent;
+      font-size: 1em;
+      font-weight: bold;
+      font-family: "Open Sans", sans-serif;
+      padding: 8px 0;
+      float: right;
+      @include bottom-border;
+      @include clear-fix;
+    }
   }
 
   @media screen and (max-width: 560px) {
@@ -48,7 +114,20 @@
     }
 
     &--info {
+      float: right;
       margin: 10px 0;
+
+      @include clear-fix;
+    }
+
+    &--form {
+      margin-top: 20px;
+
+      &--input {
+        width: 100% !important;
+        margin-right: 0;
+        margin-top: 20px;
+      }
     }
   }
 }
