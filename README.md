@@ -14,9 +14,9 @@ gem install --no-ri --no-rdoc jekyll
 ```
 npm install
 ```
-3. Run gulp
+3. Build the website
 ```
-gulp
+npm start
 ```
 Server will run at localhost:3000.
 

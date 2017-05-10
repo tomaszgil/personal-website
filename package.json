@@ -4,7 +4,7 @@
   "description": "Personal website using Shane Osbourne's project template",
   "main": "gulpfile.js",
   "scripts": {
-    "start": ""
+    "start": "./node_modules/.bin/gulp"
   },
   "author": "Tomasz Gil",
   "license": "ISC",
