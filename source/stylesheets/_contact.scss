@@ -1,0 +1,54 @@
+.contact {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: $primary-section-bg;
+
+  &--text {
+    line-height: 1.8em;
+    width: 50%;
+    display: inline-block;
+    margin: 50px 0;
+  }
+
+  &--info {
+    float: right;
+    margin: 50px 0;
+    line-height: 1.8em;
+
+    &--place {
+      margin: 0;
+      text-align: right;
+    }
+
+    &--email {
+      text-decoration: none;
+      font-weight: 700;
+      padding-bottom: 8px;
+      color: $accent;
+      border-bottom: 3px solid transparent;
+      transition: 0.2s all ease-in-out;
+
+      &:hover {
+        border-bottom-color: $accent;
+      }
+    }
+
+    &:after {
+      content: " ";
+      display: block;
+      clear: both;
+    }
+
+  }
+
+  @media screen and (max-width: 560px) {
+    &--text {
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    &--info {
+      margin: 10px 0;
+    }
+  }
+}
