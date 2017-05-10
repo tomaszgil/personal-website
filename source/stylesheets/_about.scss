@@ -48,8 +48,7 @@
   }
 
   &--list {
-    list-style-type: none;
-    padding: 0;
+    @include list-reset;
 
     &--item {
       display: block;
