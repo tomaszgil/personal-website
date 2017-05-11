@@ -23,25 +23,6 @@
       box-shadow: 0px 10px 30px $shadow;
       height: 5%;
 
-      &:nth-child(2n+1) {
-        float: left;
-        margin-right: 5%;
-      }
-
-      &:nth-child(2n) {
-        float: right;
-      }
-
-      &:nth-child(4n+1),
-      &:nth-child(4n+4) {
-        width: 31.667%;
-      }
-
-      &:nth-child(4n+2),
-      &:nth-child(4n+3) {
-        width: 63.333%;
-      }
-
       &__overlay {
         background: black;
         position: absolute;
