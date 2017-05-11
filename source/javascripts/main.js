@@ -1,5 +1,6 @@
 $(document).ready(function() {
   handleMobileNavigation();
+  handleFormValidation();
 });
 
 function handleMobileNavigation() {
@@ -49,4 +50,11 @@ function showMobileNavigation() {
   menu.hide();
   menu.addClass("header--menu__mobile");
   menu.fadeIn(300);
+}
+
+function handleFormValidation() {
+  $(':required').one('blur keydown', function() {
+    console.log('touched', this);
+    $(this).addClass('touched');
+  });
 }

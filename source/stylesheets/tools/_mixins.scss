@@ -12,11 +12,6 @@
   cursor: pointer;
 }
 
-@mixin list-reset {
-  list-style-type: none;
-  padding: 0;
-}
-
 @mixin bottom-border {
   border-bottom: 3px solid transparent;
   transition: 0.2s all ease-in-out;

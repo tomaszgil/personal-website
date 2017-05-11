@@ -1,11 +1,10 @@
 .footer {
   padding: 60px 0;
   background-color: $secondary-section-bg;
+  font-size: 0.8em;
 
   &--social {
-    @include list-reset;
     float: right;
-    font-size: 0.9em;
 
     &--item {
       font-weight: bold;
@@ -28,7 +27,6 @@
     display: inline-block;
     color: $regular-text;
     font-weight: bold;
-    font-size: 0.9em;
 
     &--name {
       text-transform: uppercase;

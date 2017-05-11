@@ -48,8 +48,6 @@
   }
 
   &--list {
-    @include list-reset;
-
     &--item {
       display: block;
       margin: 1em 0;
