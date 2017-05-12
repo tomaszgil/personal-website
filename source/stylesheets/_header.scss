@@ -34,12 +34,7 @@
       margin-left: 60px;
       padding: 8px 0;
       cursor: pointer;
-      border-bottom: 3px solid transparent;
-      transition: 0.2s all ease-in-out;
-
-      &:hover {
-        border-bottom-color: $accent;
-      }
+      @include bottom-border;
     }
   }
 
@@ -121,6 +116,7 @@
         height: 100vh;
         background: black;
         opacity: 0.9;
+        z-index: 9;
       }
     }
 

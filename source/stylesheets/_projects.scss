@@ -1,30 +1,31 @@
 .projects {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
   background: $secondary-section-bg;
 
   &--list {
     list-style-type: none;
     padding-top: 40px;
     padding-left: 0;
-
-    &:after {
-      content: " ";
-      display: block;
-      clear: both;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &--item {
+      width: 31.5%;
+      margin-bottom: 30px;
       display: inline-block;
       position: relative;
       overflow: hidden;
-      margin-bottom: 5%;
       cursor: pointer;
       box-shadow: 0px 10px 30px $shadow;
-      height: 5%;
+
+      &__link {
+        transform: translateY(-10px);
+      }
 
       &__overlay {
-        background: black;
+        background: rgba(0, 0, 0, 0.8);
         position: absolute;
         opacity: 0;
         top: 0;
@@ -41,9 +42,9 @@
       }
 
       &--title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        position: relative;
+        vertical-align: center;
+        margin: 0;
         font-family: 'Playfair Display', serif;
         font-size: 2em;
         color: $page-title;
@@ -53,9 +54,7 @@
       }
 
       &--see {
-        border: none;
-        cursor: pointer;
-        background: none;
+        @include button-reset;
         text-align: center;
         text-transform: uppercase;
         color: $accent;
@@ -67,11 +66,11 @@
       }
 
       &:hover &__overlay {
-        opacity: 0.8;
+        opacity: 1;
       }
 
       &:hover &--img {
-        transform: scale(1.1);
+        transform: scale(1.2);
         transform-origin: center;
       }
 
@@ -83,6 +82,47 @@
       &:hover &--see {
         opacity: 1;
         transform: translateY(-20px);
+      }
+    }
+  }
+
+  &--graphics {
+    text-align: center;
+    margin-top: 60px;
+
+    &--title {
+      font-size: 1em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: $accent;
+      @include x-separator;
+    }
+
+    &--link {
+      color: $regular-text;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px 0;
+      @include bottom-border;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    &--list {
+      &--item {
+        margin-bottom: 25px;
+        width: 47.5%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    &--list {
+      &--item {
+        margin-bottom: 40px;
+        width: 100%;
       }
     }
   }
