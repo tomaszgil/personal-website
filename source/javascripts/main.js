@@ -54,7 +54,6 @@ function showMobileNavigation() {
 
 function handleFormValidation() {
   $(':required').one('blur keydown', function() {
-    console.log('touched', this);
     $(this).addClass('touched');
   });
 }

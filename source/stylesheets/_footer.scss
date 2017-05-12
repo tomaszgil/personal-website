@@ -11,14 +11,14 @@
       text-transform: uppercase;
       display: inline-block;
       margin-left: 40px;
-      padding: 8px 0;
-      transform: translateY(-8px);
-      @include bottom-border;
+      transform: translateY(4px);
 
       &__link {
         text-decoration: none;
         color: $regular-text;
         cursor: pointer;
+        padding: 8px 0;
+        @include bottom-border;
       }
     }
   }
@@ -27,6 +27,7 @@
     display: inline-block;
     color: $regular-text;
     font-weight: bold;
+    line-height: 1.8em;
 
     &--name {
       text-transform: uppercase;
@@ -34,13 +35,16 @@
     }
   }
 
-  @media screen and (min-width: 560px) and (max-width: 860px) {
+  @media screen and (max-width: 860px) {
+    text-align: center;
+
     &--social {
       float: none;
       display: inline-block;
-      margin: 0 auto;
-      &--item {
+      margin-bottom: 20px;
 
+      &--item {
+        margin: 0 20px;
       }
     }
 
@@ -50,15 +54,12 @@
     }
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 480px) {
     &--social {
-
       &--item {
+        display: block;
+        margin-bottom: 30px;
       }
-    }
-
-    &--copyright {
-
     }
   }
 }
