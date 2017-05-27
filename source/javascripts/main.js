@@ -1,7 +1,18 @@
 $(document).ready(function() {
+  handleResizingProjectPhotos();
   handleMobileNavigation();
   handleFormValidation();
 });
+
+function handleResizingProjectPhotos() {
+  resizeProjectPhotos();
+  $(window).resize(resizeProjectPhotos);
+}
+
+function resizeProjectPhotos() {
+  var itemWidth = $('.projects--list--item').width();
+  $('.projects--list--item').height(itemWidth);
+}
 
 function handleMobileNavigation() {
   $("#menu-button").on('click', function() {
