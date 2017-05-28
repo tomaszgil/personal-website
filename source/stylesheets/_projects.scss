@@ -21,7 +21,6 @@
       box-shadow: 0px 10px 30px $shadow;
 
       &__overlay {
-        background-color: transparent;
         position: absolute;
         top: 0;
         left: 0;
@@ -30,6 +29,18 @@
         cursor: pointer;
         box-sizing: border-box;
         transition: background-color 0.3s ease-in-out;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.8);
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+        }
       }
 
       &--img {
@@ -39,29 +50,43 @@
       }
 
       &--title {
-        margin-top: 20%;
+        position: absolute;
+        width: 80%;
         text-align: center;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        opacity: 0;
+        transform: translate(-50%, -200%);
         font-family: 'Playfair Display', serif;
         font-size: 2em;
         color: $page-title;
-        opacity: 0;
         transition: all 0.3s ease-in-out;
+        z-index: 1;
       }
 
       &--see {
         @include button-reset;
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        margin: 0;
+        width: 80%;
+        transform: translate(-50%, 300%);
+        opacity: 0;
+        line-height: 1.4em;
         text-align: center;
         text-transform: uppercase;
         color: $accent;
         font-size: 1em;
         font-weight: bold;
-        opacity: 0;
         transition: all 0.3s ease-in-out;
         transition-delay: 0.2s;
+        z-index: 1;
       }
 
-      &__overlay:hover &__overlay {
-          background-color: black;
+      &__overlay:hover:after {
+        opacity: 1;
       }
 
       &__overlay:hover &--img {
@@ -71,12 +96,12 @@
 
       &__overlay:hover &--title {
         opacity: 1;
-        transform: translateY(20px);
+        transform: translate(-50%, -50%);
       }
 
-      &__over:hover &--see {
+      &__overlay:hover &--see {
         opacity: 1;
-        transform: translateY(-20px);
+        transform: translate(-50%, 150%);
       }
     }
   }
@@ -109,7 +134,6 @@
       &--item {
         margin-bottom: 25px;
         width: 47.5%;
-        padding-bottom: 47.5%;
       }
     }
   }
@@ -119,7 +143,6 @@
       &--item {
         margin-bottom: 40px;
         width: 100%;
-        padding-bottom: 100%;
       }
     }
   }
