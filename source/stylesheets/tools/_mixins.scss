@@ -35,13 +35,24 @@
   }
 }
 
-@mixin introduce {
+@mixin introduceUp {
   opacity: 0;
-  transform: translateY(20vh);
+  transform: translateY(10vh);
   transition: 500ms all ease-in-out;
 
   &.is-visible {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
+  }
+}
+
+@mixin introduceDown {
+  opacity: 0;
+  transform: translateY(-10vh);
+  transition: 500ms all ease-in-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
