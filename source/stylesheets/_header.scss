@@ -21,6 +21,13 @@
     margin-top: 40vh;
   }
 
+  &--subheader {
+    text-transform: uppercase;
+    color: $accent;
+    margin: 0.5em 0;
+    font-size: 1em;
+  }
+
   &--menu {
     display: flex;
     align-items: center;
