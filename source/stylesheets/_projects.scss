@@ -19,6 +19,7 @@
       position: relative;
       box-sizing: border-box;
       box-shadow: 0px 10px 30px $shadow;
+      @include introduceFadeIn;
 
       &__overlay {
         position: absolute;

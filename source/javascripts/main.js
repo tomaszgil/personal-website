@@ -74,7 +74,7 @@ function handleIntroducingElements() {
   introduceHeader();
   $(window).scroll(function() {
     introduceSectionHeaders();
-    introduceProjectsPhotos();
+    introduceProjectPhotos();
   });
 }
 
@@ -93,5 +93,14 @@ function introduceSectionHeaders() {
 }
 
 function introduceProjectPhotos() {
+  var scroll = $(window).scrollTop();
+  var projectsList = $(".projects--list--item");
+  if($("#projects").offset().top - $(window).height() * 1/3 < scroll) {
+    projectsList.each(function(i) {
+      setTimeout(function() {
+        projectsList.eq(i).addClass("is-visible");
+      }, 300 * i);
+    });
+  }
 
 }

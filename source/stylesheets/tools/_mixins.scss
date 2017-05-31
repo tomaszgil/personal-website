@@ -56,3 +56,12 @@
     transform: translateY(0);
   }
 }
+
+@mixin introduceFadeIn {
+  opacity: 0;
+  transition: 500ms all ease-in-out;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
