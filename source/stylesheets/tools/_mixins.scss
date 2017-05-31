@@ -34,3 +34,14 @@
     background-image: url('../images/cross.svg');
   }
 }
+
+@mixin introduce {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 300ms all ease-in-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+}

@@ -2,6 +2,7 @@ $(document).ready(function() {
   handleResizingProjectPhotos();
   handleMobileNavigation();
   handleFormValidation();
+  handleIntroducingElements();
 });
 
 function handleResizingProjectPhotos() {
@@ -67,4 +68,28 @@ function handleFormValidation() {
   $(':required').one('blur keydown', function() {
     $(this).addClass('touched');
   });
+}
+
+function handleIntroducingElements() {
+  introduceHeader();
+  var sections = ["about", "projects", "contact"];
+  $(window).scroll(function() {
+    for (var i=0; i<sections.length; i++) {
+      slideSectionHeader(sections[i]);
+    }
+  });
+}
+
+function introduceHeader() {
+  $("#page-subtitle").hide();
+  $("#page-title").hide().fadeIn(1000, function() {
+    $("#page-subtitle").fadeIn(1000);
+  });
+}
+
+function slideSectionHeader(name) {
+  var scroll = $(window).scrollTop();
+  if($("#" + name).offset().top - $(window).height() * 2/3 < scroll) {
+    $("#" + name + "--header, #" + name + "--subheader").addClass('is-visible');
+  }
 }
