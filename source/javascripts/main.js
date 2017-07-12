@@ -74,12 +74,14 @@ function handleIntroducingElements() {
   introduceHeader();
   $(window).scroll(function() {
     introduceSectionHeaders();
+    introduceSectionContents();
     introduceProjectPhotos();
+    introduceFooter();
   });
 }
 
 function introduceHeader() {
-  $("#page-title, #page-subtitle").addClass("is-visible");
+  $("#page-title, #page-subtitle, #topbar").addClass("is-visible");
 }
 
 function introduceSectionHeaders() {
@@ -88,6 +90,16 @@ function introduceSectionHeaders() {
     var scroll = $(window).scrollTop();
     if($("#" + name).offset().top - $(window).height() * 2/3 < scroll) {
       $("#" + name + "--header, #" + name + "--subheader").addClass('is-visible');
+    }
+  });
+}
+
+function introduceSectionContents() {
+  var sections = ["contact"];
+  sections.forEach(function(name) {
+    var scroll = $(window).scrollTop();
+    if($("#" + name).offset().top - $(window).height() * 1/2 < scroll) {
+      $("#" + name + "--content").addClass('is-visible');
     }
   });
 }
@@ -102,5 +114,11 @@ function introduceProjectPhotos() {
       }, 300 * i);
     });
   }
+}
 
+function introduceFooter() {
+  var scroll = $(window).scrollTop();
+  if($("#footer").offset().top - $(window).height() * 8/10 < scroll) {
+    $("#footer--content").addClass('is-visible');
+  }
 }

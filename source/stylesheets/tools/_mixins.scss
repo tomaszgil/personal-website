@@ -22,19 +22,6 @@
   }
 }
 
-@mixin x-separator {
-  &:before {
-    content: "";
-    width: 15px;
-    height: 15px;
-    display: block;
-    position: relative;
-    top: -30px;
-    margin: 0 auto;
-    background-image: url('../images/cross.svg');
-  }
-}
-
 @mixin introduceUp {
   opacity: 0;
   transform: translateY(10vh);
@@ -60,6 +47,16 @@
 @mixin introduceFadeIn {
   opacity: 0;
   transition: 500ms opacity ease-in-out;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+@mixin introduceFadeInDelayed {
+  opacity: 0;
+  transition: 1000ms opacity ease-in-out;
+  transition-delay: 300ms;
 
   &.is-visible {
     opacity: 1;

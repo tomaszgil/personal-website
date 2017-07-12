@@ -1,4 +1,8 @@
 .footer {
+  .container {
+    @include introduceFadeIn;
+  }
+
   padding: 60px 0;
   background-color: $secondary-section-bg;
   font-size: 0.8em;
