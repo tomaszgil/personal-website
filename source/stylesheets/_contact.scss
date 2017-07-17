@@ -108,6 +108,7 @@
       font-family: "Open Sans", sans-serif;
       padding: 8px 0;
       float: right;
+      cursor: pointer;
       @include bottom-border;
       @include clear-fix;
     }
