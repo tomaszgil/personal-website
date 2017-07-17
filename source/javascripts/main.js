@@ -75,6 +75,7 @@ function handleIntroducingElements() {
   $(window).scroll(function() {
     introduceSectionHeaders();
     introduceSectionContents();
+    introduceSkillsLists();
     introduceProjectPhotos();
     introduceFooter();
   });
@@ -102,6 +103,18 @@ function introduceSectionContents() {
       $("#" + name + "--content").addClass('is-visible');
     }
   });
+}
+
+function introduceSkillsLists() {
+  var scroll = $(window).scrollTop();
+  var skillsList = $(".about--list--item");
+  if($("#about--skills").offset().top - 2/3 * $(window).height() < scroll) {
+    skillsList.each(function(i) {
+      setTimeout(function() {
+        skillsList.eq(i).addClass("is-visible");
+      }, 300 * i);
+    });
+  }
 }
 
 function introduceProjectPhotos() {
