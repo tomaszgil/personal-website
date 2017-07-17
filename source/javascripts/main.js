@@ -95,7 +95,7 @@ function introduceSectionHeaders() {
 }
 
 function introduceSectionContents() {
-  var sections = ["contact"];
+  var sections = ["about", "contact"];
   sections.forEach(function(name) {
     var scroll = $(window).scrollTop();
     if($("#" + name).offset().top - $(window).height() * 1/2 < scroll) {

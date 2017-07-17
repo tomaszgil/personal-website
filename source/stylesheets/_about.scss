@@ -3,6 +3,10 @@
   padding-bottom: 80px;
   background: $primary-section-bg;
 
+  .inner-container {
+    @include introduceFadeInDelayed;
+  }
+
   &--row {
     display: flex;
     align-items: center;
