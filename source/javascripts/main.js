@@ -118,7 +118,8 @@ function introduceProjectPhotos() {
 
 function introduceFooter() {
   var scroll = $(window).scrollTop();
-  if($("#footer").offset().top - $(window).height() * 8/10 < scroll) {
+  var footer = $("#footer");
+  if(footer.offset().top - $(window).height() + 3/4 * footer.height() < scroll) {
     $("#footer--content").addClass('is-visible');
   }
 }
