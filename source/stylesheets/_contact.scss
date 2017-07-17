@@ -100,7 +100,6 @@
     }
 
     &--button {
-      @include button-reset;
       display: block;
       text-transform: uppercase;
       color: $regular-text;

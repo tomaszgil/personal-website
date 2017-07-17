@@ -14,6 +14,7 @@ body {
   font-size: 11pt;
   color: $regular-text;
   font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
