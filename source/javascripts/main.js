@@ -34,6 +34,7 @@ function handleMobileNavigation() {
     }, 1000);
     if($("#menu").hasClass("header--menu__mobile")) {
       hideMobileNavigation();
+      restoreScroll();
     }
   });
 
@@ -68,15 +69,13 @@ function showMobileNavigation() {
 
 function disableScroll() {
   $('html, body').css({
-    overflow: 'hidden',
-    height: '100%'
+    overflow: 'hidden'
   });
 }
 
 function restoreScroll() {
   $('html, body').css({
-    overflow: 'auto',
-    height: 'auto'
+    overflow: 'auto'
   });
 }
 
