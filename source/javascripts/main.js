@@ -19,8 +19,10 @@ function handleMobileNavigation() {
   $("#menu-button").on('click', function() {
     if($("#menu").hasClass("header--menu__mobile")) {
       hideMobileNavigation();
+      restoreScroll();
     } else {
       showMobileNavigation();
+      disableScroll();
     }
   });
 
@@ -62,6 +64,20 @@ function showMobileNavigation() {
   menu.hide();
   menu.addClass("header--menu__mobile");
   menu.fadeIn(300);
+}
+
+function disableScroll() {
+  $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+  });
+}
+
+function restoreScroll() {
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+  });
 }
 
 function handleFormValidation() {
