@@ -9,10 +9,10 @@
         <p class="contact--info--place">Poznań, Polska</p>
         <a href="mailto:tomaszgil@hotmail.com" class="contact--info--email">tomaszgil@hotmail.com</a>
       </div>
-      <form class="contact--form" action="" method="post">
-        <input type="text" class="contact--form--input" placeholder="Twoje imię">
-        <input type="email" class="contact--form--input" placeholder="Twój adres e-mail" required>
-        <textarea class="contact--form--message" placeholder="Twoja wiadomość..." rows="4" required></textarea>
+      <form id="contact-form" class="contact--form" action="/email.php" method="post">
+        <input name="name" type="text" class="contact--form--input" placeholder="Twoje imię">
+        <input name="email" type="email" class="contact--form--input" placeholder="Twój adres e-mail" required>
+        <textarea name="message" class="contact--form--message" placeholder="Twoja wiadomość..." rows="4" required></textarea>
         <input type="submit" class="contact--form--button" name="send" value="Wyślij wiadomość">
       </form>
     </div>

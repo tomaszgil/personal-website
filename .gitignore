@@ -4,7 +4,7 @@ node_modules
 source/stylesheets/*.css
 
 ### Jekyll ###
-_site/
+site/
 .sass-cache/
 .jekyll-metadata
 

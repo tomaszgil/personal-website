@@ -1,7 +1,8 @@
-$(document).ready(function() {
+$(function() {
   handleResizingProjectPhotos();
   handleMobileNavigation();
   handleFormValidation();
+  handleEmailSending();
   handleIntroducingElements();
 });
 
@@ -85,6 +86,34 @@ function handleFormValidation() {
   });
 }
 
+function handleEmailSending() {
+  var form = $('#contact-form');
+  var send = form.find(':submit');
+  var sendText = send.html();
+
+  form.on('submit', function (e) {
+    e.preventDefault();
+    if (form.hasClass('write')) {
+      form.removeClass('write').addClass("verify");
+    } else if (form.hasClass('verify')) {
+      send.prop("disabled", true).html("Sending...");
+      $.ajax({
+        "type": "POST",
+        "url": form.attr("action"),
+        "data": form.serialize(),
+        "success": function(data, status, xhr) {
+          form.removeClass("verify").addClass("sent");
+        },
+        "error": function(xhr, errorType, error) {
+          send.prop("disabled", false).html(sendText);
+          form.removeClass("verify").addClass("write");
+          alert(xhr.responseText);
+        }
+      });
+    }
+  });
+}
+
 function handleIntroducingElements() {
   introduceHeader();
   $(window).scroll(function() {
@@ -127,7 +156,7 @@ function introduceSkillsLists() {
     skillsList.each(function(i) {
       setTimeout(function() {
         skillsList.eq(i).addClass("is-visible");
-      }, 300 * i);
+      }, 200 * i);
     });
   }
 }

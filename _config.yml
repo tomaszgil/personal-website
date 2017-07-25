@@ -5,6 +5,7 @@ source: ./source
 destination: ./site
 layouts_dir: ./source/layouts
 includes_dir: ./includes
+email_script: ./email.php
 
 # Reading
 encoding: "utf-8"

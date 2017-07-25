@@ -51,12 +51,18 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('source/stylesheets'));
 });
 
+gulp.task('copy-php', function () {
+    return gulp.src('source/**/*.php')
+        .pipe(gulp.dest('site'));
+});
+
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
     gulp.watch('source/stylesheets/**/*.scss', ['sass']);
+    gulp.watch('source/**/*.php', ['copy-php']);
     gulp.watch(['source/layouts/*.html', 'source/includes/*.html', 'source/javascripts/*.js'], ['jekyll-rebuild']);
 });
 
@@ -64,4 +70,4 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'copy-php', 'watch']);
