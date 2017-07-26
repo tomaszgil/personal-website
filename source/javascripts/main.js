@@ -89,28 +89,20 @@ function handleFormValidation() {
 function handleEmailSending() {
   var form = $('#contact-form');
   var send = form.find(':submit');
-  var sendText = send.html();
 
   form.on('submit', function (e) {
     e.preventDefault();
-    if (form.hasClass('write')) {
-      form.removeClass('write').addClass("verify");
-    } else if (form.hasClass('verify')) {
-      send.prop("disabled", true).html("Sending...");
-      $.ajax({
-        "type": "POST",
-        "url": form.attr("action"),
-        "data": form.serialize(),
-        "success": function(data, status, xhr) {
-          form.removeClass("verify").addClass("sent");
-        },
-        "error": function(xhr, errorType, error) {
-          send.prop("disabled", false).html(sendText);
-          form.removeClass("verify").addClass("write");
-          alert(xhr.responseText);
-        }
-      });
-    }
+    $.ajax({
+      "type": "POST",
+      "url": form.attr("action"),
+      "data": form.serialize(),
+      "success": function(data, status, xhr) {
+        alert("Success!");
+      },
+      "error": function(xhr, errorType, error) {
+        alert("Failed! " + xhr.responseText);
+      }
+    });
   });
 }
 
