@@ -24,12 +24,12 @@ try {
     throw new Exception('Failed to deliver your message!', 500);
   }
 } catch (Throwable $err) {
-  $code = $e->getCode();
+  $code = $err->getCode();
   if ($code < 400 or $code > 599) {
     $code = 500;
   }
   http_response_code($code);
-  exit($e->getMessage());
+  exit($err->getMessage());
 }
 
 echo 'OK';
