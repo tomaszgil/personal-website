@@ -89,6 +89,7 @@ function handleFormValidation() {
 function handleEmailSending() {
   var form = $('#contact-form');
   var send = form.find(':submit');
+  var response = $('#response');
 
   form.on('submit', function (e) {
     e.preventDefault();
@@ -97,10 +98,16 @@ function handleEmailSending() {
       "url": form.attr("action"),
       "data": form.serialize(),
       "success": function(data, status, xhr) {
-        alert("Success!");
+        response.text("Wiadomość wysłana. Dziękuję za wypełnienie formularza!").addClass("success");
+        setTimeout(function() {
+          response.removeClass("success");
+        }, 6000);
       },
       "error": function(xhr, errorType, error) {
-        alert("Failed! " + xhr.responseText);
+        response.text("Wysyłanie nie powiodło się. Proszę spróbować ponownie.").addClass("error");
+        setTimeout(function() {
+          response.removeClass("error");
+        }, 6000);
       }
     });
   });
@@ -125,7 +132,7 @@ function introduceSectionHeaders() {
   var sections = ["about", "projects", "contact"];
   sections.forEach(function(name) {
     var scroll = $(window).scrollTop();
-    if($("#" + name).offset().top - $(window).height() * 2/3 < scroll) {
+    if($("#" + name).offset().top - $(window).height() * 3/4 < scroll) {
       $("#" + name + "--header, #" + name + "--subheader").addClass('is-visible');
     }
   });
@@ -135,7 +142,7 @@ function introduceSectionContents() {
   var sections = ["about", "contact"];
   sections.forEach(function(name) {
     var scroll = $(window).scrollTop();
-    if($("#" + name).offset().top - $(window).height() * 1/2 < scroll) {
+    if($("#" + name).offset().top - $(window).height() * 2/3 < scroll) {
       $("#" + name + "--content").addClass('is-visible');
     }
   });
@@ -144,7 +151,7 @@ function introduceSectionContents() {
 function introduceSkillsLists() {
   var scroll = $(window).scrollTop();
   var skillsList = $(".about--list--item");
-  if($("#about--skills").offset().top - 2/3 * $(window).height() < scroll) {
+  if($("#about--skills").offset().top - 3/4 * $(window).height() < scroll) {
     skillsList.each(function(i) {
       setTimeout(function() {
         skillsList.eq(i).addClass("is-visible");

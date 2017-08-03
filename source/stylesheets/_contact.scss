@@ -39,7 +39,7 @@
 
   &--form {
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     &--input {
       box-sizing: border-box;
@@ -49,6 +49,10 @@
       font-size: 0.9em;
       color: $regular-text;
       transition: 0.2s all ease-in-out;
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset;
+      }
 
       &::placeholder {
         color: $form-text;
@@ -109,8 +113,42 @@
       padding: 8px 0;
       float: right;
       cursor: pointer;
+      position: relative;
+      z-index: 1;
       @include bottom-border;
       @include clear-fix;
+    }
+  }
+
+  &--response {
+    padding: 11px 0;
+    font-size: 0.9em;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      display: inline-block;
+      content: "\02dc ";
+      margin-right: 5px;
+    }
+
+    &.success {
+      opacity: 1;
+      color: $accent;
+
+      &::before {
+        content: "\2713 ";
+      }
+    }
+
+    &.error {
+      opacity: 1;
+      color: $form-invalid;
+
+      &::before {
+        content: "\00d7 ";
+      }
     }
   }
 
@@ -129,12 +167,23 @@
 
     &--form {
       margin-top: 20px;
+      margin-bottom: 0;
 
       &--input[type="text"],
       &--input[type="email"] {
         width: 100%;
         margin-right: 0;
         margin-top: 20px;
+      }
+    }
+
+    &--response {
+      margin-top: 20px;
+      text-align: center;
+
+      &.success,
+      &.error {
+        margin-top: 80px;
       }
     }
   }

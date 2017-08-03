@@ -8,7 +8,7 @@
 
 @mixin bottom-border {
   border-bottom: 3px solid transparent;
-  transition: 0.2s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 
   &:hover {
     border-bottom-color: $accent;
@@ -18,7 +18,7 @@
 @mixin introduceUp {
   opacity: 0;
   transform: translateY(10vh);
-  transition: 500ms all ease-in-out;
+  transition: 0.5s all ease-in-out;
 
   &.is-visible {
     opacity: 1;
@@ -29,7 +29,7 @@
 @mixin introduceDown {
   opacity: 0;
   transform: translateY(-10vh);
-  transition: 500ms all ease-in-out;
+  transition: 0.5s all ease-in-out;
 
   &.is-visible {
     opacity: 1;
@@ -39,7 +39,7 @@
 
 @mixin introduceFadeIn {
   opacity: 0;
-  transition: 500ms opacity ease-in-out;
+  transition: 0.5s opacity ease-in-out;
 
   &.is-visible {
     opacity: 1;
@@ -48,8 +48,8 @@
 
 @mixin introduceFadeInDelayed {
   opacity: 0;
-  transition: 1000ms opacity ease-in-out;
-  transition-delay: 300ms;
+  transition: 0.8s opacity ease-in-out;
+  transition-delay: 0.3s;
 
   &.is-visible {
     opacity: 1;
