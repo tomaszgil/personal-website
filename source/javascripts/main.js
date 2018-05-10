@@ -1,8 +1,6 @@
 $(function() {
   handleResizingProjectPhotos();
   handleMobileNavigation();
-  handleFormValidation();
-  handleEmailSending();
   handleIntroducingElements();
 });
 
@@ -77,39 +75,6 @@ function disableScroll() {
 function restoreScroll() {
   $('html, body').css({
     overflow: 'auto'
-  });
-}
-
-function handleFormValidation() {
-  $(':required').one('blur keydown', function() {
-    $(this).addClass('touched');
-  });
-}
-
-function handleEmailSending() {
-  var form = $('#contact-form');
-  var send = form.find(':submit');
-  var response = $('#response');
-
-  form.on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-      "type": "POST",
-      "url": form.attr("action"),
-      "data": form.serialize(),
-      "success": function(data, status, xhr) {
-        response.text("Wiadomość wysłana. Dziękuję za wypełnienie formularza!").addClass("success");
-        setTimeout(function() {
-          response.removeClass("success");
-        }, 6000);
-      },
-      "error": function(xhr, errorType, error) {
-        response.text("Wysyłanie nie powiodło się. Proszę spróbować ponownie.").addClass("error");
-        setTimeout(function() {
-          response.removeClass("error");
-        }, 6000);
-      }
-    });
   });
 }
 

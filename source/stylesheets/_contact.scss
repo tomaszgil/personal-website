@@ -1,6 +1,9 @@
 .contact {
   .inner-container {
     @include introduceFadeInDelayed;
+
+    display: flex;
+    justify-content: space-between;
   }
 
   padding-top: 60px;
@@ -15,7 +18,6 @@
   }
 
   &--info {
-    float: right;
     margin: 50px 0;
     line-height: 1.8em;
 
@@ -27,7 +29,6 @@
     &--email {
       text-decoration: none;
       font-weight: 700;
-      text-align: right;
       padding-bottom: 6px;
       cursor: pointer;
       color: $accent;
@@ -37,153 +38,23 @@
     @include clear-fix;
   }
 
-  &--form {
-    margin-top: 40px;
-    margin-bottom: 20px;
-
-    &--input {
-      box-sizing: border-box;
-      padding: 8px;
-      border-bottom: 3px solid $form-input;
-      font-family: "Open Sans", sans-serif;
-      font-size: 0.9em;
-      color: $regular-text;
-      transition: 0.2s all ease-in-out;
-
-      &:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 30px white inset;
-      }
-
-      &::placeholder {
-        color: $form-text;
-      }
-
-      &[type="text"] {
-        margin-right: 4.7%;
-        width: 34.2%;
-      }
-
-      &[type="email"] {
-        width: 60.33%;
-      }
-
-      &:focus {
-        border-color: $accent;
-      }
-
-      &.touched:invalid {
-        border-bottom: 3px solid $form-invalid;
-      }
-    }
-
-    &--message {
-      resize: none;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 8px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-bottom: 3px solid $form-input;
-      background: none;
-      font-family: "Open Sans", sans-serif;
-      font-size: 0.9em;
-      color: $regular-text;
-      transition: 0.2s all ease-in-out;
-
-      &::placeholder {
-        color: $form-text;
-      }
-
-      &:focus {
-        border-color: $accent;
-      }
-
-      &.touched:invalid {
-        border-bottom: 3px solid $form-invalid;
-      }
-    }
-
-    &--button {
-      display: block;
-      text-transform: uppercase;
-      color: $regular-text;
-      font-size: 1em;
-      font-weight: bold;
-      font-family: "Open Sans", sans-serif;
-      padding: 8px 0;
-      float: right;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-      @include bottom-border;
-      @include clear-fix;
-    }
-  }
-
-  &--response {
-    padding: 11px 0;
-    font-size: 0.9em;
-    font-weight: 700;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-
-    &::before {
-      display: inline-block;
-      content: "\02dc ";
-      margin-right: 5px;
-    }
-
-    &.success {
-      opacity: 1;
-      color: $accent;
-
-      &::before {
-        content: "\2713 ";
-      }
-    }
-
-    &.error {
-      opacity: 1;
-      color: $form-invalid;
-
-      &::before {
-        content: "\00d7 ";
-      }
-    }
-  }
-
   @media screen and (max-width: 560px) {
+    .inner-container {
+      flex-direction: column;
+    }
+
     &--text {
       width: 100%;
       margin: 30px 0;
     }
 
     &--info {
-      float: right;
-      margin: 10px 0;
+      margin: 0;
 
       @include clear-fix;
-    }
 
-    &--form {
-      margin-top: 20px;
-      margin-bottom: 0;
-
-      &--input[type="text"],
-      &--input[type="email"] {
-        width: 100%;
-        margin-right: 0;
-        margin-top: 20px;
-      }
-    }
-
-    &--response {
-      margin-top: 20px;
-      text-align: center;
-
-      &.success,
-      &.error {
-        margin-top: 80px;
+      &--email {
+        float: right;
       }
     }
   }
