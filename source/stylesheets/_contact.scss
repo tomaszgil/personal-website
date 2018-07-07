@@ -1,14 +1,14 @@
 .contact {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: $primary-section-bg;
+
   .inner-container {
-    @include introduceFadeInDelayed;
+    @include introduce-fade-in-delayed;
 
     display: flex;
     justify-content: space-between;
   }
-
-  padding-top: 60px;
-  padding-bottom: 80px;
-  background: $primary-section-bg;
 
   &--text {
     line-height: 1.8em;
@@ -18,6 +18,8 @@
   }
 
   &--info {
+    @include clear-fix;
+
     margin: 50px 0;
     line-height: 1.8em;
 
@@ -27,15 +29,14 @@
     }
 
     &--email {
+      @include bottom-border;
+
       text-decoration: none;
       font-weight: 700;
       padding-bottom: 6px;
       cursor: pointer;
       color: $accent;
-      @include bottom-border;
     }
-
-    @include clear-fix;
   }
 
   @media screen and (max-width: 560px) {
@@ -49,9 +50,9 @@
     }
 
     &--info {
-      margin: 0;
-
       @include clear-fix;
+
+      margin: 0;
 
       &--email {
         float: right;

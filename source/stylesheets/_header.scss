@@ -3,10 +3,11 @@
   height: 100vh;
 
   &--topbar {
+    @include introduce-fade-in-delayed;
+
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    @include introduceFadeInDelayed;
   }
 
   &--logo {
@@ -15,20 +16,22 @@
   }
 
   &--page-title {
+    @include introduce-down;
+
     font-family: 'Playfair Display', serif;
     font-size: 3em;
     color: $page-title;
     margin: 0.3em 0;
     margin-top: 40vh;
-    @include introduceDown;
   }
 
   &--subheader {
+    @include introduce-up;
+
     text-transform: uppercase;
     color: $accent;
     margin: 0.5em 0;
     font-size: 1em;
-    @include introduceUp;
     transition-delay: 0.3s;
   }
 
@@ -37,6 +40,8 @@
     align-items: center;
 
     &--option {
+      @include bottom-border;
+
       text-transform: uppercase;
       text-decoration: none;
       font-size: 0.8em;
@@ -45,7 +50,6 @@
       margin-left: 60px;
       padding: 8px 0;
       cursor: pointer;
-      @include bottom-border;
     }
   }
 
@@ -53,7 +57,7 @@
     width: 40px;
     height: 40px;
     padding: 10px;
-    border: none;
+    border: 0;
     background: none;
     position: fixed;
     right: 20px;
@@ -62,12 +66,15 @@
     cursor: pointer;
     display: none;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       outline: 0;
     }
 
-    div, div:before, div:after {
-      content: "";
+    div,
+    div::before,
+    div::after {
+      content: '';
       width: 30px;
       height: 3px;
       display: block;
@@ -76,11 +83,11 @@
       transition: all 0.3s ease-in-out;
     }
 
-    div:before {
+    div::before {
       top: 10px;
     }
 
-    div:after {
+    div::after {
       top: -13px;
     }
 
@@ -88,12 +95,12 @@
       div {
         background: transparent;
 
-        &:before {
+        &::before {
           transform: rotate(45deg);
           top: 0;
         }
 
-        &:after {
+        &::after {
           transform: rotate(-45deg);
           top: -3px;
         }
@@ -120,12 +127,11 @@
         flex-direction: column;
         justify-content: center;
         position: fixed;
-        opacity: 1;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: black;
+        background: #000;
         opacity: 0.9;
         z-index: 9;
       }

@@ -1,12 +1,12 @@
 .footer {
-  .container {
-    @include introduceFadeIn;
-  }
-
   padding: 60px 0;
   background-color: $secondary-section-bg;
   font-size: 0.8em;
   transition: all 0.3s ease-in-out;
+
+  .container {
+    @include introduce-fade-in;
+  }
 
   &--social {
     float: right;
@@ -19,11 +19,12 @@
       transform: translateY(4px);
 
       &__link {
+        @include bottom-border;
+
         text-decoration: none;
         color: $regular-text;
         cursor: pointer;
         padding: 8px 0;
-        @include bottom-border;
       }
     }
   }

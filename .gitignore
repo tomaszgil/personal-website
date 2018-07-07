@@ -1,10 +1,10 @@
-site
 .idea
 node_modules
 source/stylesheets/*.css
 
 ### Jekyll ###
-site/
+public/
+deploy/
 .sass-cache/
 .jekyll-metadata
 

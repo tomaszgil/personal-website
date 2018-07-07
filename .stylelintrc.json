@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "ignoreFiles": "./source/stylesheets/tools/_normalize.scss",
+  "rules": {
+    "max-nesting-depth": 4,
+    "selector-max-compound-selectors": 4,
+    "order/properties-alphabetical-order": [ true, { "severity": "warning" }]
+  }
+}

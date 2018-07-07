@@ -12,14 +12,15 @@
     justify-content: space-between;
 
     &--item {
+      @include introduce-fade-in;
+
       width: calc(33.3% - 20px);
       margin-bottom: 30px;
       display: inline-block;
       overflow: hidden;
       position: relative;
       box-sizing: border-box;
-      box-shadow: 0px 10px 30px $shadow;
-      @include introduceFadeIn;
+      box-shadow: 0 10px 30px $shadow;
 
       &__overlay {
         position: absolute;
@@ -31,7 +32,7 @@
         box-sizing: border-box;
         transition: background-color 0.3s ease-in-out;
 
-        &:after {
+        &::after {
           content: '';
           position: absolute;
           width: 100%;
@@ -85,7 +86,7 @@
         z-index: 1;
       }
 
-      &__overlay:hover:after {
+      &__overlay:hover::after {
         opacity: 1;
       }
 
@@ -118,13 +119,14 @@
     }
 
     &--link {
+      @include bottom-border;
+
       color: $regular-text;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
       cursor: pointer;
       padding: 8px 0;
-      @include bottom-border;
     }
   }
 

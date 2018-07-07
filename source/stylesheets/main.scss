@@ -1,13 +1,13 @@
-@import "tools/_normalize";
-@import "tools/_resets";
-@import "tools/_colors";
-@import "tools/_fonts";
-@import "tools/_mixins";
-@import "_header";
-@import "_about";
-@import "_projects";
-@import "_contact";
-@import "_footer";
+@import 'tools/normalize';
+@import 'tools/resets';
+@import 'tools/colors';
+@import 'tools/fonts';
+@import 'tools/mixins';
+@import 'header';
+@import 'about';
+@import 'projects';
+@import 'contact';
+@import 'footer';
 
 body {
   margin: 0;
@@ -29,22 +29,24 @@ body {
 }
 
 .subheader {
+  @include introduce-up;
+
   text-transform: uppercase;
   color: $accent;
   margin: 0.5em 0;
   font-size: 1em;
-  @include introduceUp;
 }
 
 .section-title {
+  @include introduce-up;
+
   font-family: 'Playfair Display', serif;
   font-size: 1.8em;
   color: $section-title;
   margin: 0.5em 0;
-  @include introduceUp;
 
-  &:after {
-    content: "";
+  &::after {
+    content: '';
     width: 30px;
     height: 3px;
     display: block;

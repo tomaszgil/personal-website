@@ -4,7 +4,7 @@
   background: $primary-section-bg;
 
   .inner-container {
-    @include introduceFadeInDelayed;
+    @include introduce-fade-in-delayed;
   }
 
   &--row {
@@ -26,7 +26,7 @@
   &--photo {
     height: 170px;
     margin: 20px auto;
-    box-shadow: 0px 0px 30px $shadow;
+    box-shadow: 0 0 30px $shadow;
   }
 
   &--skills-header {
@@ -53,10 +53,11 @@
 
   &--list {
     &--item {
+      @include introduce-fade-in;
+
       display: block;
       margin: 1em 0;
       line-height: 1.4em;
-      @include introduceFadeIn;
     }
   }
 
