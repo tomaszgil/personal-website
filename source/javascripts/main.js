@@ -14,19 +14,8 @@ const handleResizingProjectPhotos = () => {
   $(window).resize(Events.throttle(300, resizeProjectPhotos));
 };
 
-const setupAnalitycs = () => {
-  window.dataLayer = window.dataLayer || [];
-  const gtag = (...args) => {
-    window.dataLayer.push(args);
-  };
-
-  gtag('js', new Date());
-  gtag('config', 'UA-121989512-1');
-};
-
 $(() => {
   handleResizingProjectPhotos();
-  setupAnalitycs();
   const menu = new Menu();
   const si = new ScrollIntroduce();
 });

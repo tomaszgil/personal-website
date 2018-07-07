@@ -68,7 +68,7 @@ gulp.task('sass:prod', ['lint-css'], function () {
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
     .pipe(clean())
-    .pipe(gulp.dest('deploy/css'));
+    .pipe(gulp.dest('deploy/stylesheets'));
 });
 
 gulp.task('lint-js',function () {
