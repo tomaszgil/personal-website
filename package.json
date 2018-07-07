@@ -4,7 +4,8 @@
   "description": "Personal website using Shane Osbourne's project template",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "./node_modules/.bin/gulp"
+    "start": "./node_modules/.bin/gulp",
+    "deploy": "./node_modules/.bin/gulp deploy"
   },
   "author": "Tomasz Gil",
   "license": "ISC",
@@ -47,6 +48,7 @@
     "browsersync"
   ],
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "throttle-debounce": "^2.0.0"
   }
 }
