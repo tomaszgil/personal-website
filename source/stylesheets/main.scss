@@ -55,6 +55,7 @@ body {
   }
 }
 
+// Critical css
 .loader {
   background: $header-bg;
   width: 100%;
@@ -63,17 +64,13 @@ body {
   left: 0;
   position: fixed;
   z-index: 100;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &--logo {
     width: 5rem;
-    animation: 1.7s fade-in-and-out forwards linear;
-  }
-
-  &.is-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    animation: 1.5s fade-in-and-out forwards linear;
   }
 }
 

@@ -1,13 +1,11 @@
 const $ = require('jquery');
 const Events = require('throttle-debounce');
-const Cookies = require('js-cookie');
 
 class ScrollIntroduce {
   constructor() {
     this.site = $('html, body');
     this.window = $(window);
     this.visibleClass = 'is-visible';
-    this.loadingClass = 'is-loading';
 
     this.introduceHeader();
     this.bindEvents();
@@ -24,17 +22,11 @@ class ScrollIntroduce {
   }
 
   introduceHeader() {
-    if (Cookies.get('loaded')) {
-      $('#page-title, #page-subtitle, #topbar').addClass(this.visibleClass);
-    } else {
-      $('#loader')
-        .addClass(this.loadingClass)
-        .delay(1500)
-        .fadeOut(200, () => {
-          $('#page-title, #page-subtitle, #topbar').addClass(this.visibleClass);
-        });
-      Cookies.set('loaded', true, { expires: 7 });
-    }
+    $('#loader')
+      .delay(1300)
+      .fadeOut(200, () => {
+        $('#page-title, #page-subtitle, #topbar').addClass(this.visibleClass);
+      });
   }
 
   introduceSectionHeaders() {
