@@ -58,7 +58,7 @@ gulp.task('sass', ['lint-css'], function () {
       onError: browserSync.notify
     }))
     .pipe(postcss([ autoprefixer() ]))
-    .pipe(gulp.dest('public/css'))
+    .pipe(gulp.dest('public/stylesheets'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('source/stylesheets'));
 });

@@ -54,3 +54,47 @@ body {
     background: $accent;
   }
 }
+
+.loader {
+  background: $header-bg;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  display: none;
+
+  &--logo {
+    width: 5rem;
+    animation: 1.7s fade-in-and-out forwards linear;
+  }
+
+  &.is-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes fade-in-and-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
